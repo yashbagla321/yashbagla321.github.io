@@ -1,55 +1,60 @@
-# yashbagla.github.io
+# yashbagla321.github.io
 
 Static personal website for Yash Bagla, designed for GitHub Pages.
+
+Live site:
+
+```text
+https://yashbagla321.github.io/
+```
+
+Repository:
+
+```text
+https://github.com/yashbagla321/yashbagla321.github.io
+```
 
 ## Files
 
 - `index.html` - page content and structure
 - `styles.css` - responsive visual design
 - `script.js` - animated autonomy / motion-planning canvas
+- `404.html` - redirects unknown paths back to the homepage
 - `.nojekyll` - tells GitHub Pages to serve the static files directly
 
-## Deploy To GitHub Pages
+## GitHub Pages Setup
 
-### If This Repository Is Under `yashbagla`
-
-Use this if you want the site at:
+This is a GitHub user site because the repository is named:
 
 ```text
-https://yashbagla.github.io/
+yashbagla321.github.io
 ```
 
-Create or use a GitHub account or organization named `yashbagla`, then create a repository named exactly:
+and it belongs to the GitHub account:
 
 ```text
-yashbagla.github.io
+yashbagla321
 ```
 
-Upload all files from this folder to the repository root. GitHub Pages usually recognizes this as a user or organization site automatically. If not, go to `Settings` -> `Pages` and choose:
+GitHub Pages should publish the site at:
 
 ```text
-Source: Deploy from a branch
-Branch: main
-Folder: / (root)
+https://yashbagla321.github.io/
 ```
 
-### If This Repository Is Under `yashbagla321`
-
-If the repository is `yashbagla321/yashbagla.github.io`, GitHub will treat it as a project site by default. The URL will be:
+If Pages is not already enabled, open the repository on GitHub and go to:
 
 ```text
-https://yashbagla321.github.io/yashbagla.github.io/
+Settings -> Pages
 ```
 
-To publish it, upload all files from this folder to the repository root, then go to `Settings` -> `Pages` and choose:
+Then choose:
 
 ```text
 Source: Deploy from a branch
 Branch: main
 Folder: / (root)
 ```
-
-You can later add a custom domain if you want a cleaner URL.
 
 ## Local Preview
 
