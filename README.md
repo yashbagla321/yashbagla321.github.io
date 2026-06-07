@@ -49,7 +49,15 @@ If Pages is not already enabled, open the repository on GitHub and go to:
 Settings -> Pages
 ```
 
-Then choose:
+Then choose either:
+
+```text
+Source: GitHub Actions
+```
+
+The repo includes `.github/workflows/pages.yml`, which deploys the static site using Node.js 24–compatible actions.
+
+Or deploy directly from the branch:
 
 ```text
 Source: Deploy from a branch
