@@ -115,17 +115,32 @@ function drawAgents(width, height, time) {
   });
 }
 
+function drawStateMarker(x, y, color) {
+  ctx.strokeStyle = "rgba(248,246,240,0.45)";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.arc(x, y, 16, 0, Math.PI * 2);
+  ctx.stroke();
+
+  ctx.fillStyle = color;
+  ctx.beginPath();
+  ctx.arc(x, y, 9, 0, Math.PI * 2);
+  ctx.fill();
+}
+
 function drawLabels(width, height) {
+  const start = pointOnPath(0, width, height);
+  const goal = pointOnPath(1, width, height);
+
+  drawStateMarker(start.x, start.y, colors.teal);
+  drawStateMarker(goal.x, goal.y, colors.gold);
+
   ctx.fillStyle = "rgba(248,246,240,0.82)";
   ctx.font = "700 13px Inter, sans-serif";
+  ctx.fillText("start state", start.x - 8, start.y + 34);
   ctx.fillText("multi-agent route", width * 0.1, height * 0.13);
   ctx.fillText("uncertainty field", width * 0.63, height * 0.19);
-  ctx.fillText("goal state", width * 0.78, height * 0.39);
-
-  ctx.fillStyle = colors.gold;
-  ctx.beginPath();
-  ctx.arc(width * 0.86, height * 0.28, 9, 0, Math.PI * 2);
-  ctx.fill();
+  ctx.fillText("goal state", goal.x - 24, goal.y - 18);
 }
 
 function render(time = 0) {
