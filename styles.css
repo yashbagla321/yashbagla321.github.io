@@ -54,15 +54,56 @@ a {
   gap: 10px;
 }
 
-.brand-mark {
+.brand-photo,
+.hero-photo {
   align-items: center;
   background: var(--ink);
-  border-radius: 6px;
+  border-radius: 50%;
   color: var(--paper);
   display: inline-flex;
-  height: 34px;
+  flex-shrink: 0;
   justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.brand-photo {
+  border: 2px solid rgba(23, 33, 36, 0.08);
+  font-size: 0.72rem;
+  font-weight: 800;
+  height: 34px;
   width: 34px;
+}
+
+.brand-photo::before,
+.hero-photo::before {
+  content: attr(data-fallback);
+  font-weight: 800;
+  position: absolute;
+}
+
+.brand-photo img,
+.hero-photo img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.brand-photo.is-fallback img,
+.hero-photo.is-fallback img {
+  display: none;
+}
+
+.hero-photo {
+  border: 3px solid var(--line);
+  box-shadow: var(--shadow);
+  font-size: 5.46rem;
+  height: clamp(273px, 39vw, 351px);
+  width: clamp(273px, 39vw, 351px);
 }
 
 nav {
@@ -82,14 +123,47 @@ nav a:hover {
 
 .hero {
   display: grid;
-  gap: clamp(28px, 5vw, 72px);
+  gap: clamp(28px, 5vw, 48px);
   grid-template-columns: minmax(0, 1fr) minmax(340px, 0.92fr);
+  grid-template-areas:
+    "intro intro"
+    "copy visual";
   min-height: calc(100vh - 68px);
   padding: clamp(42px, 7vw, 92px) clamp(20px, 5vw, 76px) 42px;
 }
 
+.hero-intro {
+  align-items: center;
+  display: flex;
+  gap: clamp(18px, 3vw, 28px);
+  grid-area: intro;
+}
+
+.hero-identity {
+  min-width: 0;
+}
+
+.hero-identity .eyebrow {
+  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+  margin: 0;
+}
+
+.hero-greeting {
+  font-size: clamp(1.8rem, 4.5vw, 3.4rem);
+  font-weight: 500;
+  line-height: 1.05;
+  margin: 0 0 10px;
+}
+
+.hero-name {
+  color: var(--ink);
+  display: inline-block;
+  font-weight: 800;
+}
+
 .hero-copy {
   align-self: center;
+  grid-area: copy;
   max-width: 780px;
 }
 
@@ -97,7 +171,7 @@ nav a:hover {
 .section-kicker,
 .tag {
   color: var(--rust);
-  font-size: 0.78rem;
+  font-size: clamp(1.15rem, 1.6vw, 1.4rem);
   font-weight: 800;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -166,6 +240,7 @@ h3 {
 .hero-visual {
   align-self: stretch;
   background: #e9e4d7;
+  grid-area: visual;
   border: 1px solid var(--line);
   border-radius: 8px;
   box-shadow: var(--shadow);
@@ -310,7 +385,7 @@ canvas {
 .recognition-grid span {
   color: var(--gold);
   display: block;
-  font-size: 0.82rem;
+  font-size: clamp(1.15rem, 1.6vw, 1.4rem);
   font-weight: 800;
   margin-bottom: 28px;
   text-transform: uppercase;
@@ -441,6 +516,13 @@ footer {
   .split-band,
   .contact-section {
     grid-template-columns: 1fr;
+    grid-template-areas: none;
+  }
+
+  .hero-intro,
+  .hero-copy,
+  .hero-visual {
+    grid-area: auto;
   }
 
   .hero {
@@ -471,6 +553,11 @@ footer {
 
   .hero {
     padding-top: 34px;
+  }
+
+  .hero-intro {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .hero-visual {

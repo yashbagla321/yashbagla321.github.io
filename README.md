@@ -16,6 +16,7 @@ https://github.com/yashbagla321/yashbagla321.github.io
 
 ## Files
 
+- `images/headshot.png` - portrait photo shown in the header and hero
 - `index.html` - page content and structure
 - `styles.css` - responsive visual design
 - `script.js` - animated autonomy / motion-planning canvas

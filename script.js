@@ -145,3 +145,20 @@ function render(time = 0) {
 window.addEventListener("resize", resizeCanvas);
 resizeCanvas();
 requestAnimationFrame(render);
+
+document.querySelectorAll(".brand-photo img, .hero-photo img").forEach((img) => {
+  const frame = img.parentElement;
+
+  const showFallback = () => frame.classList.add("is-fallback");
+  const hideFallback = () => frame.classList.remove("is-fallback");
+
+  img.addEventListener("error", showFallback);
+  img.addEventListener("load", () => {
+    if (img.naturalWidth > 0) hideFallback();
+  });
+
+  if (img.complete) {
+    if (img.naturalWidth > 0) hideFallback();
+    else showFallback();
+  }
+});

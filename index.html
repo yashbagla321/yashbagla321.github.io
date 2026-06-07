@@ -19,7 +19,9 @@
   <body>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Yash Bagla home">
-        <span class="brand-mark">YB</span>
+        <span class="brand-photo" data-fallback="YB">
+          <img src="images/headshot.png" alt="" width="34" height="34" />
+        </span>
         <span>Yash Bagla</span>
       </a>
       <nav aria-label="Primary navigation">
@@ -32,8 +34,21 @@
 
     <main id="top">
       <section class="hero" aria-label="Introduction">
+        <div class="hero-intro">
+          <div class="hero-photo" data-fallback="YB">
+            <img
+              src="images/headshot.png"
+              alt="Portrait of Yash Bagla"
+              width="351"
+              height="351"
+            />
+          </div>
+          <div class="hero-identity">
+            <p class="hero-greeting">I'm <span class="hero-name">Yash Bagla</span></p>
+            <p class="eyebrow">Robotics / Decision Making / Motion Planning</p>
+          </div>
+        </div>
         <div class="hero-copy">
-          <p class="eyebrow">Robotics / Decision Making / Motion Planning</p>
           <h1>Building intelligent systems that move safely through the real world.</h1>
           <p class="lead">
             I am a robotics software engineer in the San Francisco Bay Area, currently on the core AI
