@@ -261,7 +261,7 @@ canvas {
 .case-card p,
 .case-card li,
 .research-list p,
-.evidence-grid p,
+.recognition-grid p,
 .timeline p {
   color: var(--muted);
 }
@@ -290,29 +290,77 @@ canvas {
   padding-top: 20px;
 }
 
-.evidence-section {
+.recognition-section {
   background: var(--surface);
 }
 
-.evidence-grid {
+.recognition-grid {
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(4, 1fr);
   margin-top: 38px;
 }
 
-.evidence-grid article {
+.recognition-grid article {
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 24px;
 }
 
-.evidence-grid span {
+.recognition-grid span {
   color: var(--gold);
   display: block;
   font-size: 0.82rem;
   font-weight: 800;
   margin-bottom: 28px;
+  text-transform: uppercase;
+}
+
+.credential-list {
+  color: var(--muted);
+  display: grid;
+  gap: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.credential-list li {
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  padding-top: 14px;
+}
+
+.credential-list strong {
+  color: var(--ink);
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.credential-list a {
+  color: var(--teal);
+  font-weight: 600;
+}
+
+.credential-list a:hover {
+  color: var(--blue);
+}
+
+.inline-link {
+  color: var(--teal);
+  display: inline-block;
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-top: 18px;
+}
+
+.inline-link:hover {
+  color: var(--blue);
 }
 
 .timeline-section {
@@ -405,7 +453,7 @@ footer {
 
   .proof-band,
   .case-grid,
-  .evidence-grid {
+  .recognition-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -431,7 +479,7 @@ footer {
 
   .proof-band,
   .case-grid,
-  .evidence-grid,
+  .recognition-grid,
   .two-column {
     grid-template-columns: 1fr;
   }

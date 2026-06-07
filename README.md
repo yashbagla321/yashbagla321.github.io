@@ -74,6 +74,6 @@ http://127.0.0.1:4173/
 
 ## Suggested Next Edits
 
-- Add confirmed publication and citation metrics from Google Scholar.
-- Add patents, talks, judging, peer review, media, or awards as evidence items.
+- Add confirmed citation metrics from Google Scholar as they grow.
+- Add invited talks, peer review, judging, mentoring, or media appearances to the Recognition section.
 - Replace any confidential employment details with public-safe language before publishing.
