@@ -3,58 +3,267 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="refresh" content="0; url=https://yashbagla321.github.io/" />
-    <link rel="canonical" href="https://yashbagla321.github.io/" />
-    <title>Redirecting to Yash Bagla</title>
-    <style>
-      :root {
-        color-scheme: light;
-        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      }
-
-      body {
-        align-items: center;
-        background: #f8f6f0;
-        color: #172124;
-        display: flex;
-        min-height: 100vh;
-        justify-content: center;
-        margin: 0;
-        padding: 24px;
-      }
-
-      main {
-        max-width: 560px;
-      }
-
-      h1 {
-        font-size: clamp(2rem, 7vw, 4rem);
-        line-height: 1;
-        margin: 0 0 16px;
-      }
-
-      p {
-        color: #63706d;
-        font-size: 1.05rem;
-        margin: 0;
-      }
-
-      a {
-        color: #0c6b63;
-        font-weight: 800;
-      }
-    </style>
-    <script>
-      window.location.replace("https://yashbagla321.github.io/");
-    </script>
+    <title>Yash Bagla | Robotics AI & Autonomous Systems</title>
+    <meta
+      name="description"
+      content="Yash Bagla is a robotics software engineer working on autonomous vehicles, motion planning, controls, and AI systems."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main>
-      <h1>Redirecting.</h1>
-      <p>
-        If you are not redirected automatically, visit
-        <a href="https://yashbagla321.github.io/">yashbagla321.github.io</a>.
-      </p>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Yash Bagla home">
+        <span class="brand-mark">YB</span>
+        <span>Yash Bagla</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#research">Research</a>
+        <a href="#evidence">EB1</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="Introduction">
+        <div class="hero-copy">
+          <p class="eyebrow">Robotics AI / Autonomous Vehicles / Motion Planning</p>
+          <h1>Building intelligent systems that move safely through the real world.</h1>
+          <p class="lead">
+            I am a robotics software engineer in the San Francisco Bay Area, currently working at
+            Zoox on AI systems for autonomous driving. My work sits at the intersection of motion
+            planning, controls, machine learning, simulation, and systems engineering.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#contact">Start a conversation</a>
+            <a class="button secondary" href="#evidence">View EB1 evidence map</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Autonomous motion planning visualization">
+          <canvas id="plannerCanvas" width="880" height="680"></canvas>
+          <div class="visual-caption">
+            <span>Prediction</span>
+            <span>Planning</span>
+            <span>Control</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="proof-band" aria-label="Professional summary">
+        <div>
+          <strong>8+ years</strong>
+          <span>Robotics, controls, and AI systems experience</span>
+        </div>
+        <div>
+          <strong>Zoox AI</strong>
+          <span>Autonomous vehicle decision-making and driving features</span>
+        </div>
+        <div>
+          <strong>Research</strong>
+          <span>Multi-agent planning, robot control, and applied ML</span>
+        </div>
+        <div>
+          <strong>2K+</strong>
+          <span>Professional network followers on LinkedIn</span>
+        </div>
+      </section>
+
+      <section id="work" class="section two-column">
+        <div class="section-kicker">Selected Work</div>
+        <div>
+          <h2>Autonomy engineering with a research spine.</h2>
+          <p>
+            I focus on shipping autonomy behavior that can survive the messy edge cases outside a
+            lab: high-speed driving dynamics, uncertainty, multi-agent interaction, model quality,
+            and reliable evaluation loops.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-grid" aria-label="Selected projects">
+        <article class="case-card">
+          <span class="tag">Current</span>
+          <h3>Autonomous driving AI at Zoox</h3>
+          <p>
+            Developing and testing intelligent driving features for a purpose-built autonomous
+            mobility platform, with emphasis on highway behavior, decision systems, and system-level
+            performance.
+          </p>
+          <ul>
+            <li>Driving feature development</li>
+            <li>High-speed autonomy behavior</li>
+            <li>AI, planning, evaluation, and systems integration</li>
+          </ul>
+        </article>
+        <article class="case-card">
+          <span class="tag">Applied ML</span>
+          <h3>Controls and machine learning research</h3>
+          <p>
+            At Drive System Design, built data-driven methodologies to improve engineering analysis
+            across mechanical, hydraulic, and control systems.
+          </p>
+          <ul>
+            <li>Hydraulic correlation using machine learning</li>
+            <li>Gearbox prognostics and health management</li>
+            <li>Fast, adaptive alternatives to expensive physics-only workflows</li>
+          </ul>
+        </article>
+        <article class="case-card">
+          <span class="tag">Robotics</span>
+          <h3>Robot control via Gaussian process regression</h3>
+          <p>
+            Implemented local learning methods to approximate nonlinear robot dynamics and improve
+            model-based control for a seven-degree-of-freedom robot.
+          </p>
+          <ul>
+            <li>Locally weighted projection regression</li>
+            <li>Torque control and model error correction</li>
+            <li>Machine learning for nonlinear dynamics</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="research" class="section split-band">
+        <div>
+          <div class="section-kicker">Research Direction</div>
+          <h2>Planning under uncertainty, from algorithms to road behavior.</h2>
+        </div>
+        <div class="research-list">
+          <article>
+            <h3>Receding horizon chance-constrained motion planning</h3>
+            <p>
+              Research on uncertainty-aware planning for multi-agent systems, with an emphasis on
+              dynamic obstacles, minimum sensing, and practical navigation.
+            </p>
+          </article>
+          <article>
+            <h3>Adaptive localization based station keeping</h3>
+            <p>
+              Estimated unknown beacon positions using range and bearing measurements, then used
+              adaptive least squares methods for localization and target approach.
+            </p>
+          </article>
+          <article>
+            <h3>Multi-agent RRTs for complex environments</h3>
+            <p>
+              Explored sampling-based planning and coordinated mapping strategies for autonomous
+              agents operating in uncertain environments.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="evidence" class="section evidence-section">
+        <div class="section-kicker">EB1 Evidence Map</div>
+        <h2>A public record built for both immigration evidence and technical credibility.</h2>
+        <p class="section-intro">
+          This site can become the public index for original contributions, scholarly output,
+          judging, media, critical roles, recommendations, and field impact. The items below are
+          intentionally structured so an attorney, recruiter, or technical leader can scan the same
+          page without losing the plot.
+        </p>
+        <div class="evidence-grid">
+          <article>
+            <span>01</span>
+            <h3>Original Contributions</h3>
+            <p>
+              Autonomous driving features, applied ML methods for engineering systems, and robotics
+              planning research. Add links to patents, internal launches, public releases, or expert
+              letters as they become available.
+            </p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Scholarly Work</h3>
+            <p>
+              Connect Google Scholar, papers, manuscripts, citations, GitHub repositories, and
+              technical reports into one curated research record.
+            </p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Critical Roles</h3>
+            <p>
+              Highlight AI autonomy work at Zoox, prior ML research at Drive System Design, and
+              robotics research roles with clear scope, stakes, and outcomes.
+            </p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Peer Recognition</h3>
+            <p>
+              Add invited talks, reviews, judging, mentorship, recommendations, awards, and public
+              commentary that show recognition beyond routine employment.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section timeline-section">
+        <div class="section-kicker">Trajectory</div>
+        <h2>From mechanical intuition to autonomy-scale AI.</h2>
+        <ol class="timeline">
+          <li>
+            <span>Current</span>
+            <div>
+              <h3>Robotics Software Engineer, Zoox</h3>
+              <p>AI systems and intelligent driving features for autonomous mobility.</p>
+            </div>
+          </li>
+          <li>
+            <span>Industry Research</span>
+            <div>
+              <h3>Controls and Machine Learning Engineer, Drive System Design</h3>
+              <p>Machine learning for hydraulic correlation, model quality, and gearbox prognostics.</p>
+            </div>
+          </li>
+          <li>
+            <span>Graduate Research</span>
+            <div>
+              <h3>Michigan State University</h3>
+              <p>Robotics, controls, machine learning, and multi-agent motion planning.</p>
+            </div>
+          </li>
+          <li>
+            <span>Foundation</span>
+            <div>
+              <h3>IIT Kanpur</h3>
+              <p>Mechanical engineering, research projects, team leadership, and hands-on systems work.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section id="contact" class="contact-section">
+        <div>
+          <div class="section-kicker">Contact</div>
+          <h2>Interested in autonomy, robotics AI, or evidence-building collaborations?</h2>
+          <p>
+            I am open to conversations with technical leaders, research collaborators, immigration
+            counsel, and teams building systems where planning, prediction, and control meet the
+            physical world.
+          </p>
+        </div>
+        <div class="contact-panel">
+          <a href="mailto:yashbagla321@gmail.com">yashbagla321@gmail.com</a>
+          <a href="https://www.linkedin.com/in/yash-bagla/">LinkedIn</a>
+          <a href="https://scholar.google.com/citations?hl=en&user=UMaYu4IAAAAJ">Google Scholar</a>
+          <a href="https://github.com/yashbagla321">GitHub</a>
+        </div>
+      </section>
     </main>
+
+    <footer>
+      <span>Yash Bagla</span>
+      <span>Robotics AI / Autonomous Vehicles / Motion Planning</span>
+    </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
