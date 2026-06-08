@@ -560,6 +560,17 @@ footer {
   padding: 22px clamp(20px, 5vw, 76px);
 }
 
+.footer-meta {
+  display: grid;
+  gap: 6px;
+  justify-items: end;
+  text-align: right;
+}
+
+.footer-copy {
+  font-size: 0.75em;
+}
+
 @media (max-width: 1000px) {
   .hero,
   .split-band,
@@ -632,6 +643,11 @@ footer {
   footer {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .footer-meta {
+    align-self: stretch;
+    text-align: right;
   }
 }
 
