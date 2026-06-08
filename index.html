@@ -19,8 +19,23 @@
   <body>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Yash Bagla home">
-        <span class="brand-photo" data-fallback="YB">
-          <img src="images/headshot.png" alt="" width="34" height="34" />
+        <span class="brand-photo headshot-photo" data-fallback="YB">
+          <span class="headshot-flipper" aria-hidden="true">
+            <img
+              class="headshot-a"
+              src="images/headshot.png"
+              alt=""
+              width="34"
+              height="34"
+            />
+            <img
+              class="headshot-b"
+              src="images/headshot-robot.png"
+              alt=""
+              width="34"
+              height="34"
+            />
+          </span>
         </span>
         <span>Yash Bagla</span>
       </a>
@@ -35,13 +50,23 @@
     <main id="top">
       <section class="hero" aria-label="Introduction">
         <div class="hero-intro">
-          <div class="hero-photo" data-fallback="YB">
-            <img
-              src="images/headshot.png"
-              alt="Portrait of Yash Bagla"
-              width="351"
-              height="351"
-            />
+          <div class="hero-photo headshot-photo" data-fallback="YB">
+            <span class="headshot-flipper">
+              <img
+                class="headshot-a"
+                src="images/headshot.png"
+                alt="Portrait of Yash Bagla"
+                width="351"
+                height="351"
+              />
+              <img
+                class="headshot-b"
+                src="images/headshot-robot.png"
+                alt=""
+                width="351"
+                height="351"
+              />
+            </span>
           </div>
           <div class="hero-identity">
             <p class="hero-greeting">I'm <span class="hero-name">Yash Bagla</span></p>

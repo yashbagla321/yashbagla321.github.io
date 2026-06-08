@@ -161,19 +161,20 @@ window.addEventListener("resize", resizeCanvas);
 resizeCanvas();
 requestAnimationFrame(render);
 
-document.querySelectorAll(".brand-photo img, .hero-photo img").forEach((img) => {
-  const frame = img.parentElement;
+document.querySelectorAll(".headshot-photo").forEach((frame) => {
+  const images = frame.querySelectorAll("img");
 
-  const showFallback = () => frame.classList.add("is-fallback");
-  const hideFallback = () => frame.classList.remove("is-fallback");
+  const updateFallback = () => {
+    const hasImage = Array.from(images).some(
+      (img) => img.complete && img.naturalWidth > 0
+    );
+    frame.classList.toggle("is-fallback", !hasImage);
+  };
 
-  img.addEventListener("error", showFallback);
-  img.addEventListener("load", () => {
-    if (img.naturalWidth > 0) hideFallback();
+  images.forEach((img) => {
+    img.addEventListener("error", updateFallback);
+    img.addEventListener("load", updateFallback);
   });
 
-  if (img.complete) {
-    if (img.naturalWidth > 0) hideFallback();
-    else showFallback();
-  }
+  updateFallback();
 });

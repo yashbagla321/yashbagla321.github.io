@@ -67,6 +67,19 @@ a {
   position: relative;
 }
 
+.headshot-photo {
+  perspective: 1000px;
+}
+
+.headshot-flipper {
+  display: block;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  width: 100%;
+  animation: headshot-coin-flip 9s ease-in-out infinite;
+}
+
 .brand-photo {
   border: 2px solid rgba(23, 33, 36, 0.08);
   font-size: 0.72rem;
@@ -82,20 +95,56 @@ a {
   position: absolute;
 }
 
-.brand-photo img,
-.hero-photo img {
+.headshot-photo img {
+  backface-visibility: hidden;
   display: block;
   height: 100%;
+  inset: 0;
   object-fit: cover;
-  object-position: center 18%;
-  position: relative;
+  position: absolute;
   width: 100%;
   z-index: 1;
 }
 
-.brand-photo.is-fallback img,
-.hero-photo.is-fallback img {
+.headshot-photo .headshot-a {
+  object-position: center 18%;
+}
+
+.headshot-photo .headshot-b {
+  object-position: center 22%;
+  transform: rotateY(180deg);
+}
+
+@keyframes headshot-coin-flip {
+  0%,
+  38% {
+    transform: rotateY(0deg);
+  }
+
+  50%,
+  88% {
+    transform: rotateY(180deg);
+  }
+
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.brand-photo.is-fallback .headshot-flipper,
+.hero-photo.is-fallback .headshot-flipper {
   display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .headshot-flipper {
+    animation: none;
+    transform: none;
+  }
+
+  .headshot-photo .headshot-b {
+    display: none;
+  }
 }
 
 .hero-photo {

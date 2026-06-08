@@ -17,6 +17,7 @@ https://github.com/yashbagla321/yashbagla321.github.io
 ## Files
 
 - `images/headshot.png` - portrait photo shown in the header and hero
+- `images/headshot-robot.png` - alternate portrait used in the rotating headshot animation
 - `index.html` - page content and structure
 - `styles.css` - responsive visual design
 - `script.js` - animated autonomy / motion-planning canvas
