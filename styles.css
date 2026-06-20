@@ -197,6 +197,13 @@ nav a:hover {
   margin: 0;
 }
 
+.hero-intro-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
 .hero-greeting {
   font-size: clamp(1.8rem, 4.5vw, 3.4rem);
   font-weight: 500;
