@@ -611,6 +611,32 @@ footer {
   outline-offset: 3px;
 }
 
+.not-found-page {
+  min-height: 100vh;
+}
+
+.not-found {
+  align-content: center;
+  display: grid;
+  min-height: 100vh;
+  padding: clamp(42px, 7vw, 92px) clamp(20px, 5vw, 76px);
+}
+
+.not-found h1 {
+  max-width: 12ch;
+}
+
+.not-found p:not(.section-kicker) {
+  color: var(--muted);
+  font-size: 1.12rem;
+  max-width: 620px;
+}
+
+.not-found .button {
+  justify-self: start;
+  margin-top: 14px;
+}
+
 @media (max-width: 1000px) {
   .hero,
   .split-band,

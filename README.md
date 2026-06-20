@@ -21,7 +21,7 @@ https://github.com/yashbagla321/yashbagla321.github.io
 - `index.html` - page content and structure
 - `styles.css` - responsive visual design
 - `script.js` - animated autonomy / motion-planning canvas
-- `404.html` - redirects unknown paths back to the homepage
+- `404.html` - branded not-found page with a homepage link
 - `.nojekyll` - tells GitHub Pages to serve the static files directly
 
 ## GitHub Pages Setup

@@ -1,5 +1,7 @@
 const canvas = document.getElementById("plannerCanvas");
 const ctx = canvas.getContext("2d");
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+let animationFrameId = null;
 
 const colors = {
   ink: "#172124",
@@ -23,6 +25,7 @@ function resizeCanvas() {
   canvas.width = Math.floor(rect.width * dpr);
   canvas.height = Math.floor(rect.height * dpr);
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  renderFrame(reducedMotion.matches ? 2600 : performance.now());
 }
 
 function pointOnPath(t, width, height, offset = 0) {
@@ -143,7 +146,7 @@ function drawLabels(width, height) {
   ctx.fillText("goal state", goal.x - 24, goal.y - 18);
 }
 
-function render(time = 0) {
+function renderFrame(time = 0) {
   const rect = canvas.getBoundingClientRect();
   const width = rect.width;
   const height = rect.height;
@@ -153,13 +156,36 @@ function render(time = 0) {
   drawPath(width, height, time);
   drawAgents(width, height, time);
   drawLabels(width, height);
+}
 
-  requestAnimationFrame(render);
+function render(time = 0) {
+  renderFrame(time);
+  animationFrameId = requestAnimationFrame(render);
+}
+
+function syncMotionPreference() {
+  if (reducedMotion.matches) {
+    if (animationFrameId) {
+      cancelAnimationFrame(animationFrameId);
+      animationFrameId = null;
+    }
+    renderFrame(2600);
+    return;
+  }
+
+  if (!animationFrameId) {
+    animationFrameId = requestAnimationFrame(render);
+  }
 }
 
 window.addEventListener("resize", resizeCanvas);
+if (reducedMotion.addEventListener) {
+  reducedMotion.addEventListener("change", syncMotionPreference);
+} else {
+  reducedMotion.addListener(syncMotionPreference);
+}
 resizeCanvas();
-requestAnimationFrame(render);
+syncMotionPreference();
 
 document.querySelectorAll(".headshot-photo").forEach((frame) => {
   const images = frame.querySelectorAll("img");
