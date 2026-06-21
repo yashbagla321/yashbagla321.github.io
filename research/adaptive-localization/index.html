@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Adaptive Localization Research | Yash Bagla</title>
+    <meta
+      name="description"
+      content="Unpublished adaptive localization research by Yash Bagla on hidden-target seeking with unknown-pose cooperative range-bearing beacons."
+    />
+    <link rel="canonical" href="https://yashbagla321.github.io/research/adaptive-localization/" />
+    <link rel="icon" href="../../favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="../../images/favicon-32.png" />
+    <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../../" aria-label="Yash Bagla home">
+        <span class="brand-photo headshot-photo" data-fallback="YB">
+          <span class="headshot-flipper" aria-hidden="true">
+            <img class="headshot-a" src="../../images/headshot.png" alt="" width="34" height="34" />
+            <img class="headshot-b" src="../../images/headshot-robot.png" alt="" width="34" height="34" />
+          </span>
+        </span>
+        <span>Yash Bagla</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="../../#work">Work</a>
+        <a href="../">Research</a>
+        <a href="../../#recognition">Recognition</a>
+        <a href="../../#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero adaptive-hero">
+        <div>
+          <div class="section-kicker">Adaptive Localization</div>
+          <h1>Self-calibrating hidden-target seeking from cooperative range-bearing beacons.</h1>
+        </div>
+        <p class="lead">
+          This ongoing research studies how a robot can localize and approach a target that is not
+          directly observable. Cooperative range-bearing beacons provide indirect measurements, while
+          robot motion supplies the geometric excitation needed to estimate target position, beacon
+          position, and beacon orientation together.
+        </p>
+      </section>
+
+      <section class="research-detail-grid">
+        <article>
+          <span class="tag">Basic Idea</span>
+          <h2>Motion turns weak cooperative sensing into usable target localization.</h2>
+          <p>
+            A robot receives range-bearing measurements from a friendly beacon or agent, but the
+            beacon pose and yaw are not globally calibrated. From a single static viewpoint, target
+            position, beacon translation, and beacon orientation can share an ambiguity. As the robot
+            moves, distinct relative observations add constraints that reduce this self-calibration
+            ambiguity and make the hidden target observable in simulation.
+          </p>
+        </article>
+        <article>
+          <span class="tag">Estimator Structure</span>
+          <h2>Local-frame sensing couples target localization with beacon self-calibration.</h2>
+          <p>
+            The estimator solves a joint nonlinear problem over the hidden target, beacon positions,
+            and beacon yaw angles. The simulations compare one- and two-beacon configurations, track
+            closed-loop convergence, and test how range and bearing noise affect the recovered
+            geometry.
+          </p>
+        </article>
+      </section>
+
+      <section class="ccrrt-animation-section">
+        <div class="section-kicker">Closed-loop Replay</div>
+        <div class="animation-header">
+          <h2>Robot trajectory and target estimate converge from cooperative measurements.</h2>
+          <p>
+            The animation shows the first 50 steps of a two-beacon local-frame run. The robot starts
+            with a coarse target estimate, uses range-bearing measurements from unknown-pose beacons,
+            updates the target and beacon estimates, and moves toward the hidden target as the
+            estimation error drops.
+          </p>
+        </div>
+
+        <div class="ccrrt-replay">
+          <div class="ccrrt-canvas-wrap">
+            <canvas
+              id="adaptiveCanvas"
+              width="960"
+              height="680"
+              aria-label="Animated adaptive localization closed-loop replay"
+            ></canvas>
+          </div>
+          <aside class="ccrrt-panel" aria-live="polite">
+            <div>
+              <span>Replay</span>
+              <strong>Two-beacon local frame</strong>
+            </div>
+            <div>
+              <span>Step</span>
+              <strong id="adaptiveStep">0 / 0</strong>
+            </div>
+            <div>
+              <span>Target error</span>
+              <strong id="adaptiveTargetError">-</strong>
+            </div>
+            <div>
+              <span>Beacon position RMSE</span>
+              <strong id="adaptiveBeaconError">-</strong>
+            </div>
+            <div>
+              <span>Beacon yaw RMSE</span>
+              <strong id="adaptiveYawError">-</strong>
+            </div>
+            <button class="button primary" id="adaptiveToggle" type="button">Pause</button>
+          </aside>
+        </div>
+      </section>
+
+      <section class="research-detail-grid">
+        <article>
+          <span class="tag">Observability</span>
+          <h2>Trajectory excitation changes the numerical rank.</h2>
+          <p>
+            A single static vehicle pose leaves the local one-beacon model rank-deficient. Two
+            distinct poses recover full rank for the five unknowns, and the full excited trajectory
+            improves conditioning further.
+          </p>
+          <ul class="compact-result-list">
+            <li><strong>1 pose:</strong> rank 4, singular value 0</li>
+            <li><strong>2 poses:</strong> rank 5, singular value 12.42</li>
+            <li><strong>80 poses:</strong> rank 5, singular value 91.80</li>
+          </ul>
+        </article>
+        <article>
+          <span class="tag">Monte Carlo</span>
+          <h2>Noisy trials show low final target error in simulation.</h2>
+          <p>
+            Across the local-frame unknown-yaw scenario, the simulator reports target RMSE near
+            0.0063 with one beacon and 0.0041 with two beacons under the configured noise level.
+            These are simulation results, not a publication claim.
+          </p>
+          <p class="private-repo-note">Repository currently private.</p>
+        </article>
+      </section>
+
+      <section class="result-gallery-section">
+        <div class="section-kicker">Selected Results</div>
+        <h2>Simulation diagnostics for convergence and robustness.</h2>
+        <div class="result-gallery">
+          <figure>
+            <img src="assets/four-panel-errors-local-1beacon.png" alt="One-beacon adaptive localization error plots" />
+            <figcaption>One-beacon local-frame convergence diagnostics.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/four-panel-errors-local-2beacon.png" alt="Two-beacon adaptive localization error plots" />
+            <figcaption>Two-beacon local-frame convergence diagnostics.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/noise-robustness.png" alt="Adaptive localization noise robustness plot" />
+            <figcaption>Noise robustness sweep across range and bearing uncertainty.</figcaption>
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Yash Bagla</span>
+      <div class="footer-meta">
+        <span>Robotics / Decision Making / Motion Planning</span>
+        <span class="footer-copy">© 2026 Yash Bagla. All rights reserved.</span>
+      </div>
+    </footer>
+
+    <script src="adaptive-localization-data.js"></script>
+    <script src="adaptive-localization.js"></script>
+  </body>
+</html>

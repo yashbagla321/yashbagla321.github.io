@@ -89,6 +89,41 @@
           </div>
         </article>
 
+        <article class="research-feature">
+          <div>
+            <span class="tag">Active Research</span>
+            <h2>Adaptive localization for hidden targets using unknown-pose range-bearing beacons.</h2>
+            <p>
+              This project studies cooperative localization when a robot cannot directly observe the
+              target and the assisting beacons are not globally calibrated. The estimator jointly
+              recovers target position, beacon position, and beacon yaw while the robot motion
+              supplies informative viewpoints for self-calibration.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="adaptive-localization/">Explore adaptive localization</a>
+              <a class="button secondary" href="multi-agent-ccrrt/">Compare with CC-RRT</a>
+            </div>
+          </div>
+          <div class="research-highlight-grid" aria-label="Adaptive localization technical highlights">
+            <div>
+              <strong>Hidden Target</strong>
+              <span>The robot estimates a target it cannot directly measure.</span>
+            </div>
+            <div>
+              <strong>Unknown Beacon Pose</strong>
+              <span>Beacon position and yaw are estimated with the target state.</span>
+            </div>
+            <div>
+              <strong>Trajectory Excitation</strong>
+              <span>Distinct robot viewpoints improve observability and conditioning.</span>
+            </div>
+            <div>
+              <strong>Closed-loop Seeking</strong>
+              <span>The controller drives toward the evolving target estimate.</span>
+            </div>
+          </div>
+        </article>
+
         <div class="research-card-grid">
           <article class="research-card">
             <span class="tag">Robot Control</span>
