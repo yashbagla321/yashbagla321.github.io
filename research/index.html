@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Research | Yash Bagla</title>
+    <meta
+      name="description"
+      content="Research by Yash Bagla in multi-agent motion planning, chance-constrained robotics, robot control, and applied machine learning."
+    />
+    <link rel="canonical" href="https://yashbagla321.github.io/research/" />
+    <link rel="icon" href="../favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="../images/favicon-32.png" />
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../" aria-label="Yash Bagla home">
+        <span class="brand-photo headshot-photo" data-fallback="YB">
+          <span class="headshot-flipper" aria-hidden="true">
+            <img class="headshot-a" src="../images/headshot.png" alt="" width="34" height="34" />
+            <img class="headshot-b" src="../images/headshot-robot.png" alt="" width="34" height="34" />
+          </span>
+        </span>
+        <span>Yash Bagla</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="../#work">Work</a>
+        <a href="./">Research</a>
+        <a href="../#recognition">Recognition</a>
+        <a href="../#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero research-page-hero">
+        <div>
+          <div class="section-kicker">Research</div>
+          <h1>Motion planning, robot learning, and autonomy under uncertainty.</h1>
+        </div>
+        <p class="lead">
+          My research work sits at the intersection of planning, prediction, control, and machine
+          learning. I am especially interested in methods that turn uncertainty into an explicit
+          design constraint for robots operating around other moving agents.
+        </p>
+      </section>
+
+      <section class="research-overview">
+        <article class="research-feature">
+          <div>
+            <span class="tag">Featured Research</span>
+            <h2>Receding horizon chance-constrained motion planning for uncertain multi-agent systems.</h2>
+            <p>
+              This project studies how autonomous agents can plan through cluttered environments while
+              accounting for uncertainty in their own state, other agents, and moving obstacles. The
+              implementation combines Chance-Constrained RRT tree expansion, priority-ordered
+              trajectory prediction, Monte Carlo collision estimation, Kalman covariance updates,
+              and receding-horizon replanning.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="multi-agent-ccrrt/">Explore Multi-agent CC-RRT</a>
+              <a class="button secondary" href="https://doi.org/10.1115/DSCC2019-9237">Read the paper</a>
+            </div>
+          </div>
+          <div class="research-highlight-grid" aria-label="Multi-agent CC-RRT technical highlights">
+            <div>
+              <strong>Scalable Coordination</strong>
+              <span>Priority-ordered planning supports variable numbers of agents and moving obstacles.</span>
+            </div>
+            <div>
+              <strong>Chance Constraints</strong>
+              <span>Monte Carlo collision checks bound risk under uncertain state estimates.</span>
+            </div>
+            <div>
+              <strong>Belief Updates</strong>
+              <span>Kalman updates reduce covariance as new measurements arrive during execution.</span>
+            </div>
+            <div>
+              <strong>Receding Horizon</strong>
+              <span>Lazy horizon checks can trigger replanning when predictions violate feasibility.</span>
+            </div>
+          </div>
+        </article>
+
+        <div class="research-card-grid">
+          <article class="research-card">
+            <span class="tag">Robot Control</span>
+            <h3>Gaussian process regression for nonlinear robot dynamics</h3>
+            <p>
+              Local learning methods for approximating nonlinear dynamics and improving model-based
+              torque control on a seven-degree-of-freedom robot.
+            </p>
+          </article>
+          <article class="research-card">
+            <span class="tag">Localization</span>
+            <h3>Adaptive station keeping with unknown beacon positions</h3>
+            <p>
+              Range and bearing measurements combined with adaptive least squares estimation for
+              localization, tracking, and target approach.
+            </p>
+          </article>
+          <article class="research-card">
+            <span class="tag">Applied ML</span>
+            <h3>Data-driven modeling for mechanical and hydraulic systems</h3>
+            <p>
+              Machine learning methods for faster engineering analysis, hydraulic correlation, and
+              gearbox prognostics in applied drivetrain workflows.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Yash Bagla</span>
+      <div class="footer-meta">
+        <span>Robotics / Decision Making / Motion Planning</span>
+        <span class="footer-copy">© 2026 Yash Bagla. All rights reserved.</span>
+      </div>
+    </footer>
+  </body>
+</html>

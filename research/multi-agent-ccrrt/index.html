@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Multi-agent CC-RRT Research | Yash Bagla</title>
+    <meta
+      name="description"
+      content="A deeper look at Yash Bagla's Multi-agent Chance-Constrained RRT research, with an animated replay generated from exported planner data."
+    />
+    <link rel="canonical" href="https://yashbagla321.github.io/research/multi-agent-ccrrt/" />
+    <link rel="icon" href="../../favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="../../images/favicon-32.png" />
+    <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../../" aria-label="Yash Bagla home">
+        <span class="brand-photo headshot-photo" data-fallback="YB">
+          <span class="headshot-flipper" aria-hidden="true">
+            <img class="headshot-a" src="../../images/headshot.png" alt="" width="34" height="34" />
+            <img class="headshot-b" src="../../images/headshot-robot.png" alt="" width="34" height="34" />
+          </span>
+        </span>
+        <span>Yash Bagla</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="../../#work">Work</a>
+        <a href="../">Research</a>
+        <a href="../../#recognition">Recognition</a>
+        <a href="../../#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero ccrrt-hero">
+        <div>
+          <div class="section-kicker">Multi-agent CC-RRT</div>
+          <h1>Planning collision-aware paths when every robot is uncertain.</h1>
+        </div>
+        <p class="lead">
+          This research extends Chance-Constrained RRT into a receding-horizon, multi-agent planner.
+          Each agent propagates state covariance through candidate RRT nodes, rejects branches whose
+          estimated collision probability violates the chance bound, publishes trajectory predictions
+          to lower-priority agents, and replans after measurement updates reduce localization
+          uncertainty.
+        </p>
+      </section>
+
+      <section class="research-detail-grid">
+        <article>
+          <span class="tag">Problem</span>
+          <h2>Multi-agent motion planning gets hard when uncertainty is part of the state.</h2>
+          <p>
+            Classical sampling-based planners search for feasible paths in configuration space, but
+            mobile robots also carry stochastic state estimates, process noise, prediction error, and
+            moving-obstacle uncertainty. The CC-RRT formulation lifts collision checking into a
+            probabilistic feasibility test: candidate nodes are retained only when the estimated
+            collision probability satisfies the configured chance constraint.
+          </p>
+        </article>
+        <article>
+          <span class="tag">Approach</span>
+          <h2>Priority planning plus receding-horizon repair.</h2>
+          <p>
+            Higher-priority agents plan first and expose time-indexed trajectory predictions. Each
+            lower-priority planner treats those predictions as dynamic constraints alongside static
+            geometry and moving obstacles. During execution, a lazy horizon check evaluates the next
+            action against updated predictions; when the risk bound is violated, the planner repairs
+            the trajectory from the current belief state.
+          </p>
+        </article>
+      </section>
+
+      <section class="ccrrt-animation-section">
+        <div class="section-kicker">Planner Replay</div>
+        <div class="animation-header">
+          <h2>Priority-aware coordination in a cluttered multi-agent rollout.</h2>
+          <p>
+            The replay shows the lower-priority blue robot yielding to the priority green robot,
+            taking a longer route to clear the conflict region. This behavior is the intended success
+            case: the priority ordering, chance constraints, and receding-horizon replans produce
+            feasible trajectories without forcing both agents through the same space at the same time.
+          </p>
+        </div>
+
+        <div class="ccrrt-replay">
+          <div class="ccrrt-canvas-wrap">
+            <canvas id="ccrrtCanvas" width="960" height="680" aria-label="Animated Multi-agent CC-RRT replay"></canvas>
+          </div>
+          <aside class="ccrrt-panel" aria-live="polite">
+            <div>
+              <span>Replay</span>
+              <strong id="ccrrtScenario">Priority yielding</strong>
+            </div>
+            <div>
+              <span>Status</span>
+              <strong id="ccrrtStatus">loading</strong>
+            </div>
+            <div>
+              <span>Timestep</span>
+              <strong id="ccrrtTime">0 / 0</strong>
+            </div>
+            <div>
+              <span>Replans</span>
+              <strong id="ccrrtReplans">-</strong>
+            </div>
+            <div>
+              <span>Total steps</span>
+              <strong id="ccrrtSteps">-</strong>
+            </div>
+            <button class="button primary" id="ccrrtToggle" type="button">Pause</button>
+          </aside>
+        </div>
+      </section>
+
+      <section class="research-detail-grid">
+        <article>
+          <span class="tag">Implementation</span>
+          <h2>Modern C++17 implementation with replay export.</h2>
+          <p>
+            The C++17 codebase includes a planner core, Monte Carlo collision checker, Kalman filter,
+            runtime JSON configuration, unit tests, and CSV/JSON replay export. The public animation
+            on this page is generated from those exported files rather than hand-drawn paths.
+          </p>
+          <a class="inline-link" href="https://github.com/yashbagla321/Multi-agent-CCRRT/tree/master">
+            View the GitHub repository
+          </a>
+        </article>
+        <article>
+          <span class="tag">Publication</span>
+          <h2>DSCC 2019 conference paper.</h2>
+          <p>
+            The research was published as "On Receding Horizon Chance Constraint Motion Planning for
+            Uncertain Multi-Agent Systems," with Vaibhav Srivastava, at ASME Dynamic Systems and
+            Control Conference.
+          </p>
+          <a class="inline-link" href="https://doi.org/10.1115/DSCC2019-9237">Read the paper</a>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <span>Yash Bagla</span>
+      <div class="footer-meta">
+        <span>Robotics / Decision Making / Motion Planning</span>
+        <span class="footer-copy">© 2026 Yash Bagla. All rights reserved.</span>
+      </div>
+    </footer>
+
+    <script src="ccrrt-replay-data.js"></script>
+    <script src="ccrrt-animation.js"></script>
+  </body>
+</html>

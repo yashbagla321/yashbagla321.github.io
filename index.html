@@ -60,7 +60,13 @@
       </a>
       <nav aria-label="Primary navigation">
         <a href="#work">Work</a>
-        <a href="#research">Research</a>
+        <details class="nav-menu">
+          <summary>Research</summary>
+          <div class="nav-dropdown">
+            <a href="#research">Summary</a>
+            <a href="research/">Deep-dive</a>
+          </div>
+        </details>
         <a href="#recognition">Recognition</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -208,6 +214,7 @@
               Research on uncertainty-aware planning for multi-agent systems, with an emphasis on
               dynamic obstacles, minimum sensing, and practical navigation.
             </p>
+            <a class="inline-link" href="research/multi-agent-ccrrt/">Explore the Multi-agent CC-RRT project</a>
           </article>
           <article>
             <h3>Adaptive localization based station keeping</h3>
@@ -224,6 +231,7 @@
             </p>
           </article>
         </div>
+        <a class="inline-link" href="research/">View all research</a>
       </section>
 
       <section id="recognition" class="section recognition-section">

@@ -20,6 +20,7 @@ https://github.com/yashbagla321/yashbagla321.github.io
 - `images/headshot-robot.png` - alternate portrait used in the rotating headshot animation
 - `favicon.ico`, `images/favicon-32.png`, `images/apple-touch-icon.png` - browser tab and saved-site icons
 - `index.html` - page content and structure
+- `research/` - research overview and project subpages
 - `styles.css` - responsive visual design
 - `script.js` - animated autonomy / motion-planning canvas
 - `404.html` - branded not-found page with a homepage link
