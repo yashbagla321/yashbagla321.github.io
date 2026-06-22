@@ -763,6 +763,55 @@ canvas {
   padding: 14px 16px 16px;
 }
 
+.impact-proof-band {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.mentorship-overview {
+  display: grid;
+  gap: 16px;
+}
+
+.mentee-section {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: clamp(24px, 3.6vw, 42px);
+}
+
+.mentee-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 26px;
+}
+
+.mentee-grid.two-up {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.mentee-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 22px;
+}
+
+.mentee-card p {
+  color: var(--muted);
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.mentee-card span {
+  color: var(--muted);
+  display: block;
+  margin-top: 14px;
+}
+
+.mentorship-principles {
+  padding: 0;
+}
+
 .timeline-section {
   background: #f1eee6;
 }
@@ -943,6 +992,8 @@ footer {
   .case-grid,
   .recognition-grid,
   .result-gallery,
+  .mentee-grid,
+  .mentee-grid.two-up,
   .research-card-grid,
   .research-detail-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -977,6 +1028,9 @@ footer {
   .case-grid,
   .recognition-grid,
   .result-gallery,
+  .impact-proof-band,
+  .mentee-grid,
+  .mentee-grid.two-up,
   .research-card-grid,
   .research-detail-grid,
   .research-highlight-grid,
