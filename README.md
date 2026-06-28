@@ -22,6 +22,7 @@ https://github.com/yashbagla321/yashbagla321.github.io
 - `index.html` - page content and structure
 - `research/` - research overview and project subpages
 - `impact/mentoring/` - mentorship and technical advising page
+- `impact/alumni-leadership/` - alumni coordination and institutional engagement page
 - `styles.css` - responsive visual design
 - `script.js` - animated autonomy / motion-planning canvas
 - `404.html` - branded not-found page with a homepage link
