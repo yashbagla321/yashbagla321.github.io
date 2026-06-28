@@ -24,6 +24,7 @@ https://github.com/yashbagla321/yashbagla321.github.io
 - `impact/mentoring/` - mentorship and technical advising page
 - `impact/alumni-leadership/` - alumni coordination and institutional engagement page
 - `styles.css` - responsive visual design
+- `nav.js` - dropdown navigation behavior
 - `script.js` - animated autonomy / motion-planning canvas
 - `404.html` - branded not-found page with a homepage link
 - `.nojekyll` - tells GitHub Pages to serve the static files directly
