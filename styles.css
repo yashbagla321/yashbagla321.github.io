@@ -619,6 +619,11 @@ canvas {
   color: var(--muted);
 }
 
+.research-highlight-grid .inventor-name {
+  color: var(--text);
+  font-weight: 600;
+}
+
 .research-card-grid,
 .research-detail-grid {
   display: grid;

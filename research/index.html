@@ -33,7 +33,14 @@
       </a>
       <nav aria-label="Primary navigation">
         <a href="../#work">Work</a>
-        <a href="./">Research</a>
+        <details class="nav-menu">
+          <summary>Research</summary>
+          <div class="nav-dropdown">
+            <a href="../#research">Summary</a>
+            <a href="./">Publications</a>
+            <a href="patents/">Patents</a>
+          </div>
+        </details>
         <details class="nav-menu">
           <summary>Impact</summary>
           <div class="nav-dropdown">
@@ -53,13 +60,35 @@
           <h1>Motion planning, robot learning, and autonomy under uncertainty.</h1>
         </div>
         <p class="lead">
-          My research work sits at the intersection of planning, prediction, control, and machine
-          learning. I am especially interested in methods that turn uncertainty into an explicit
-          design constraint for robots operating around other moving agents.
+          My research and invention work sits at the intersection of planning, prediction, control,
+          and machine learning. I separate it here into publications, which document peer-reviewed
+          and project-based research, and patents, which document original autonomous-systems
+          inventions.
         </p>
       </section>
 
       <section class="research-overview">
+        <article class="research-feature" id="publications">
+          <div>
+            <span class="tag">Publications</span>
+            <h2>Research projects with papers, simulations, and technical deep dives.</h2>
+            <p>
+              These projects cover multi-agent planning under uncertainty, hidden-target localization,
+              robot dynamics learning, and applied machine learning for engineering systems.
+            </p>
+          </div>
+          <div class="research-highlight-grid" aria-label="Publication highlights">
+            <div>
+              <strong>DSCC 2019</strong>
+              <span>Receding-horizon chance-constrained planning for uncertain multi-agent systems.</span>
+            </div>
+            <div>
+              <strong>arXiv 2025</strong>
+              <span>Physical commonsense reasoning benchmark across 100+ languages and cultures.</span>
+            </div>
+          </div>
+        </article>
+
         <article class="research-feature">
           <div>
             <span class="tag">Featured Research</span>
