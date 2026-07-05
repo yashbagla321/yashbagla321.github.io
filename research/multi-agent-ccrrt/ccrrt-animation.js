@@ -219,6 +219,43 @@ function drawAgents(view) {
   }
 }
 
+function drawLegend() {
+  const items = [
+    ["Priority robot", palette[0]],
+    ["Yielding robot", palette[1]],
+    ["Static obstacles", "#172124"],
+    ["Dynamic obstacle", "#b5583b"],
+    ["Replan point", "#c99328"],
+  ];
+  const x = 18;
+  const y = 18;
+  const width = 184;
+  const height = 28 + items.length * 22;
+
+  ctx.save();
+  ctx.font = "700 12px Inter, sans-serif";
+  ctx.fillStyle = "rgba(255, 255, 255, 0.9)";
+  ctx.strokeStyle = "rgba(23, 33, 36, 0.16)";
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.roundRect(x, y, width, height, 8);
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.fillStyle = "#172124";
+  ctx.fillText("Legend", x + 12, y + 20);
+  items.forEach(([label, color], index) => {
+    const rowY = y + 42 + index * 22;
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.arc(x + 17, rowY - 4, 5, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = "#34413f";
+    ctx.fillText(label, x + 30, rowY);
+  });
+  ctx.restore();
+}
+
 function updateMetrics() {
   elements.scenario.textContent = "Priority yielding";
   elements.status.textContent = state.summary.success ? "success" : "incomplete";
@@ -238,6 +275,7 @@ function draw() {
   drawGrid(view);
   drawScenario(view);
   drawAgents(view);
+  drawLegend();
   updateMetrics();
 }
 
