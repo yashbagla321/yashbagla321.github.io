@@ -68,28 +68,33 @@
       </section>
 
       <section class="research-overview">
-        <article class="research-feature" id="publications">
-          <div>
-            <span class="tag">Publications</span>
-            <h2>Research projects with papers, simulations, and technical deep dives.</h2>
-            <p>
-              These projects cover multi-agent planning under uncertainty, hidden-target localization,
-              robot dynamics learning, and applied machine learning for engineering systems.
-            </p>
-          </div>
-          <div class="research-highlight-grid" aria-label="Publication highlights">
-            <div>
+        <article class="publication-nav-section" id="publications">
+          <span class="tag">Publications</span>
+          <div class="proof-band publication-nav-grid" aria-label="Publication highlights">
+            <a href="#multi-agent-ccrrt">
               <strong>DSCC 2019</strong>
-              <span>Receding-horizon chance-constrained planning for uncertain multi-agent systems.</span>
-            </div>
-            <div>
+              <span>Chance-constrained multi-agent planning with priority ordering, belief updates, and replanning.</span>
+              <em>View section</em>
+            </a>
+            <a href="#adaptive-localization">
+              <strong>RA-L (in-review)</strong>
+              <span>Hidden-target localization with unknown-pose range-bearing beacons and informative robot motion.</span>
+              <em>View section</em>
+            </a>
+            <a href="#global-piqa">
               <strong>NeurIPS 2026</strong>
-              <span>Global PIQA, submitted and under review.</span>
-            </div>
+              <span>Global PIQA evaluates commonsense reasoning across 100+ languages and cultures.</span>
+              <em>View section</em>
+            </a>
+            <a href="#hydraulic-clutch-modeling">
+              <strong>CTI 2020</strong>
+              <span>CTI 2020 work on latch-state classification and Gaussian Process pressure modeling.</span>
+              <em>View section</em>
+            </a>
           </div>
         </article>
 
-        <article class="research-feature">
+        <article class="research-feature" id="multi-agent-ccrrt">
           <div>
             <span class="tag">Featured Research</span>
             <h2>Receding horizon chance-constrained motion planning for uncertain multi-agent systems.</h2>
@@ -125,9 +130,9 @@
           </div>
         </article>
 
-        <article class="research-feature">
+        <article class="research-feature" id="adaptive-localization">
           <div>
-            <span class="tag">Active Research</span>
+            <span class="tag">RA-L Research</span>
             <h2>Adaptive localization for hidden targets using unknown-pose range-bearing beacons.</h2>
             <p>
               This project studies cooperative localization when a robot cannot directly observe the
@@ -160,32 +165,78 @@
           </div>
         </article>
 
-        <div class="research-card-grid">
-          <article class="research-card">
-            <span class="tag">Robot Control</span>
-            <h3>Gaussian process regression for nonlinear robot dynamics</h3>
+        <article class="research-feature" id="global-piqa">
+          <div>
+            <span class="tag">NeurIPS 2026</span>
+            <h2>Global PIQA: evaluating physical commonsense across 100+ languages and cultures.</h2>
             <p>
-              Local learning methods for approximating nonlinear dynamics and improving model-based
-              torque control on a seven-degree-of-freedom robot.
+              Global PIQA is a multilingual and multicultural benchmark for evaluating physical
+              commonsense reasoning in large language models. The dataset was constructed through a
+              participatory effort by researchers across more than 65 countries, covering 141
+              language varieties, 19 language families, and 24 writing systems, with examples
+              verified by native speakers.
             </p>
-          </article>
-          <article class="research-card">
-            <span class="tag">Localization</span>
-            <h3>Adaptive station keeping with unknown beacon positions</h3>
+            <div class="hero-actions">
+              <a class="button primary" href="https://arxiv.org/abs/2510.24081">Read the arXiv preprint</a>
+              <a class="button secondary" href="https://arxiv.org/pdf/2510.24081">Open PDF</a>
+            </div>
+          </div>
+          <div class="research-highlight-grid" aria-label="Global PIQA technical highlights">
+            <div>
+              <strong>Global Coverage</strong>
+              <span>141 language varieties spanning five continents, 19 language families, and 24 writing systems.</span>
+            </div>
+            <div>
+              <strong>Cultural Specificity</strong>
+              <span>Non-parallel examples emphasize local foods, customs, traditions, and everyday knowledge.</span>
+            </div>
+            <div>
+              <strong>Native Verification</strong>
+              <span>Examples were checked by native speakers to improve linguistic and cultural validity.</span>
+            </div>
+            <div>
+              <strong>LLM Evaluation</strong>
+              <span>The benchmark exposes large performance gaps, especially for lower-resource languages.</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="research-feature" id="hydraulic-clutch-modeling">
+          <div>
+            <span class="tag">CTI 2020</span>
+            <h2>Fast data-driven modeling of hydraulic clutch control pressure.</h2>
             <p>
-              Range and bearing measurements combined with adaptive least squares estimation for
-              localization, tracking, and target approach.
+              This paper studies pressure modeling for a hydraulic clutch control circuit with
+              nonlinear behavior driven by hysteresis, latch transitions, solenoid dynamics, and
+              ramp-rate effects. The modeling pipeline adds current-derivative features to capture
+              direction-dependent pressure response, separates latch-related regimes through
+              classification, and trains local Gaussian Process regressors for the resulting
+              operating regions.
             </p>
-          </article>
-          <article class="research-card">
-            <span class="tag">Applied ML</span>
-            <h3>Data-driven modeling for mechanical and hydraulic systems</h3>
-            <p>
-              Machine learning methods for faster engineering analysis, hydraulic correlation, and
-              gearbox prognostics in applied drivetrain workflows.
-            </p>
-          </article>
-        </div>
+            <div class="hero-actions">
+              <a class="button primary" href="https://arxiv.org/abs/2607.10477">Read the arXiv preprint</a>
+              <a class="button secondary" href="https://arxiv.org/pdf/2607.10477">Open PDF</a>
+            </div>
+          </div>
+          <div class="research-highlight-grid" aria-label="Hydraulic clutch pressure modeling technical highlights">
+            <div>
+              <strong>Regime Separation</strong>
+              <span>Latch and non-latch operating regions are separated before fitting pressure models.</span>
+            </div>
+            <div>
+              <strong>Hysteresis Features</strong>
+              <span>Current-derivative inputs encode ramp direction and improve pressure-response modeling.</span>
+            </div>
+            <div>
+              <strong>Local GP Models</strong>
+              <span>Gaussian Process regressors approximate nonlinear pressure behavior within classified regimes.</span>
+            </div>
+            <div>
+              <strong>Amesim Comparison</strong>
+              <span>The learned model is compared against measured test-stand data and a physics-based baseline.</span>
+            </div>
+          </div>
+        </article>
       </section>
     </main>
 
@@ -196,6 +247,13 @@
         <span class="footer-copy">© 2026 Yash Bagla. All rights reserved.</span>
       </div>
     </footer>
+
+    <a href="#top" class="back-to-top" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+        <path d="M12 5.5 5.5 12l1.4 1.4L11 9.3V18h2V9.3l4.1 4.1 1.4-1.4L12 5.5Z" fill="currentColor" />
+      </svg>
+    </a>
+
     <script src="../nav.js"></script>
   </body>
 </html>

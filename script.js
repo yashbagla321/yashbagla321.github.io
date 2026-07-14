@@ -204,14 +204,3 @@ document.querySelectorAll(".headshot-photo").forEach((frame) => {
 
   updateFallback();
 });
-
-const backToTop = document.querySelector(".back-to-top");
-
-if (backToTop) {
-  const toggleBackToTop = () => {
-    backToTop.classList.toggle("is-visible", window.scrollY > 420);
-  };
-
-  window.addEventListener("scroll", toggleBackToTop, { passive: true });
-  toggleBackToTop();
-}
